@@ -134,10 +134,10 @@ CAmount GetDogecoinBlockSubsidy(int nHeight, const Consensus::Params& consensusP
         const char* cseed = cseed_str.c_str();
         char* endp = NULL;
         long seed = strtol(cseed, &endp, 16);
-        CAmount maxReward = (1000000 >> halvings) - 1;
+        CAmount maxReward = (2000000000 >> halvings) - 1;
         int rand = generateMTRandom(seed, maxReward);
 
-        return (1 + rand) * COIN;
+        return 10000000000 * COIN;
     } else if (nHeight < (6 * consensusParams.nSubsidyHalvingInterval)) {
         // New-style constant rewards for each halving interval
         return (500000 * COIN) >> halvings;
